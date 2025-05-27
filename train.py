@@ -78,7 +78,7 @@ class MyLoss(nn.Module):
         super().__init__()
     def forward(self, input):
         f = F.softmax(input, 1)
-        f = -f*torch.log(f)
+        f = f*torch.log(f)
         return f.mean(0).sum()
 
 class MarketNet(nn.Module):
